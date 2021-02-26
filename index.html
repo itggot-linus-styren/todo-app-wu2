@@ -30,6 +30,7 @@
     const { createApp } = Vue;
 
     const App = {
+      name: "App",
       data() {
          return {
             text: "Hello, World!",
@@ -40,11 +41,13 @@
     const app = createApp(App);
 
     app.component('hello', {
+        name: "Hello",
         props: ['text'],
         template: `#hello-world-template`
     });
 
     app.component('item', {
+        name: "Item",
         props: ['number'],
         template: `#item-template`
     });
