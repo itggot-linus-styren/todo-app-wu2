@@ -23,8 +23,10 @@
     <h1>{{text}}</h1>
 </template>
 <template id="item-template">
-    <li>{{number}}</li>
-    <button @click="deleteItem">X</button>
+    <div>
+        <li style="float:left;">{{number}}</li>
+        <button @click="deleteItem">X</button>
+    </div>
 </template>
 <script>
     const { createApp } = Vue;
