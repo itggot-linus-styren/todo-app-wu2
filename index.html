@@ -11,7 +11,7 @@
         <!-- HTML är case-insensitive så vi använder endast små bokstäver -->
         <hello :text="text"></hello>
         <ul>
-            <item v-for="number in items" :number="number"></item>
+            <item v-for="number in items" :key="number" :number="number"></item>
         </ul>
     </div>
 </body>
