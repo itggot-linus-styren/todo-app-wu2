@@ -25,7 +25,14 @@
 </template>
 <template id="item-template">
     <div>
-        <li style="float:left;">{{number}}</li>
+        <li style="float:left;">
+            <span v-if="!isComplete">
+                {{number}}
+            </span>
+            <span v-else style="text-decoration: line-through;">
+                {{number}}
+            </span>
+        </li>
         <button @click="deleteItem(number)">X</button>
         <button @click="toggleComplete">C</button>
     </div>
