@@ -24,6 +24,7 @@
 </template>
 <template id="item-template">
     <li>{{number}}</li>
+    <button @click="deleteItem">X</button>
 </template>
 <script>
     const { createApp } = Vue;
@@ -57,6 +58,11 @@
     app.component('item', {
         name: "Item",
         props: ['number'],
+        methods: {
+            deleteItem() {
+                console.log("delete item");
+            }
+        },
         template: `#item-template`
     });
     
