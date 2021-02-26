@@ -8,13 +8,21 @@
 </head>
 <body>
     <div id="app">
-        <h1>Hello, World!</h1>
+        <!-- När text ändras ifrån JS så kommer även det som visas för
+            slutanvändaren ändras -->
+        <h1>{{text}}</h1>
     </div>
 </body>
 <script>
     const { createApp } = Vue;
 
-    const App = {};
+    const App = {
+      data() {
+         return {
+            text: "Hello, World!",
+         };
+      },
+   };
 
     createApp(App).mount("#app");
 </script>
