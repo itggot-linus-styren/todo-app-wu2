@@ -8,7 +8,8 @@
 </head>
 <body>
     <div id="app">
-        <!-- Det som står i template kommer sättas in här. -->
+        <!-- HTML är case-insensitive så vi använder endast små bokstäver -->
+        <hello></hello>
     </div>
 </body>
 <!-- När text ändras i data så kommer även det som visas för
@@ -24,10 +25,15 @@ slutanvändaren ändras. -->
          return {
             text: "Hello, World!",
          };
-      },
-      template: `#hello-world-template`
+      }      
    };
 
-    createApp(App).mount("#app");
+    const app = createApp(App);
+
+    app.component('hello', {
+        template: `#hello-world-template`
+    });
+    
+    app.mount("#app");
 </script>
 </html>
