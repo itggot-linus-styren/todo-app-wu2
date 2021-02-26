@@ -33,13 +33,15 @@
       data() {
          return {
             text: "Hello, World!",
-            items: [1, 2, 3]
+            items: [1, 2, 3],
+            counter: 4
          };
       },
       methods: {
          onClick() {
             console.log("clicked!");
-            this.items.push(4);
+            this.items.push(this.counter);
+            this.counter = this.counter + 1;
          }
       }
    };
