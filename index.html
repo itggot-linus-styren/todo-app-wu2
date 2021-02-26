@@ -13,7 +13,7 @@
         <ul>
             <item v-for="number in items" :key="number" :number="number"></item>
         </ul>
-        <button v-on:click="onClick">add</button>
+        <button @click="onClick">add</button>
     </div>
 </body>
 <!-- När text prop ändras så kommer även det som visas för slutanvändaren
