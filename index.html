@@ -62,7 +62,13 @@
         props: ['number'],
         methods: {
             deleteItem(item) {
-                console.log(this.$parent.items.indexOf(item));
+                // Radera elementet i items arrayen på positionen eller index
+                // av parametern item. Det andra argumentet till splice säger
+                // att vi endast vill radera 1 element.
+                
+                // givet item är 2 och items är [1, 2, 3]
+                this.$parent.items.splice(this.$parent.items.indexOf(item), 1);
+                // efter anroppet blir items    [1,    3]
             }
         },
         template: `#item-template`
