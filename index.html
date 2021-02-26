@@ -11,9 +11,7 @@
         <!-- HTML är case-insensitive så vi använder endast små bokstäver -->
         <hello :text="text"></hello>
         <ul>
-            <item :number="1"></item>
-            <item :number="2"></item>
-            <item :number="3"></item>
+            <item v-for="number in items" :number="number"></item>
         </ul>
     </div>
 </body>
@@ -34,6 +32,7 @@
       data() {
          return {
             text: "Hello, World!",
+            items: [1, 2, 3]
          };
       }      
    };
