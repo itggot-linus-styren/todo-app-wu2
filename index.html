@@ -25,7 +25,7 @@
 <template id="item-template">
     <div>
         <li style="float:left;">{{number}}</li>
-        <button @click="deleteItem">X</button>
+        <button @click="deleteItem('hej')">X</button>
     </div>
 </template>
 <script>
@@ -61,8 +61,8 @@
         name: "Item",
         props: ['number'],
         methods: {
-            deleteItem() {
-                console.log("delete item");
+            deleteItem(param) {
+                console.log("delete knappen sa " + param);
             }
         },
         template: `#item-template`
