@@ -9,13 +9,14 @@
 <body>
     <div id="app">
         <!-- HTML är case-insensitive så vi använder endast små bokstäver -->
-        <hello></hello>
+        <hello v-bind:text="text"></hello>
     </div>
 </body>
-<!-- När $parent.text ändras i data så kommer även det som visas för
-slutanvändaren ändras. Text ligger i vår "Root" komponent. -->
+<!-- När text prop ändras så kommer även det som visas för slutanvändaren
+    ändras. Text ligger i vår "Root" komponent och skickas till vår hello
+    komponent. -->
 <template id="hello-world-template">
-    <h1>{{$parent.text}}</h1>
+    <h1>{{text}}</h1>
 </template>
 <script>
     const { createApp } = Vue;
@@ -31,6 +32,7 @@ slutanvändaren ändras. Text ligger i vår "Root" komponent. -->
     const app = createApp(App);
 
     app.component('hello', {
+        props: ['text'],
         template: `#hello-world-template`
     });
     
