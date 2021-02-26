@@ -11,9 +11,9 @@
         <!-- HTML är case-insensitive så vi använder endast små bokstäver -->
         <hello :text="text"></hello>
         <ul>
-            <item></item>
-            <item></item>
-            <item></item>
+            <item :number="1"></item>
+            <item :number="2"></item>
+            <item :number="3"></item>
         </ul>
     </div>
 </body>
@@ -45,11 +45,7 @@
     });
 
     app.component('item', {
-        data() {
-            return {
-                number: 2,
-            }
-        },
+        props: ['number'],
         template: `#item-template`
     });
     
