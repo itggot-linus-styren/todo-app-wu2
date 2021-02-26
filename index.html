@@ -11,9 +11,7 @@
         <!-- HTML är case-insensitive så vi använder endast små bokstäver -->
         <hello :text="text"></hello>
         <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
+            <item></item>
         </ul>
     </div>
 </body>
@@ -22,6 +20,9 @@
     komponent. -->
 <template id="hello-world-template">
     <h1>{{text}}</h1>
+</template>
+<template id="item-template">
+    <li>{{number}}</li>
 </template>
 <script>
     const { createApp } = Vue;
@@ -39,6 +40,15 @@
     app.component('hello', {
         props: ['text'],
         template: `#hello-world-template`
+    });
+
+    app.component('item', {
+        data() {
+            return {
+                number: 1,
+            }
+        },
+        template: `#item-template`
     });
     
     app.mount("#app");
