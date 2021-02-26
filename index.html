@@ -8,9 +8,7 @@
 </head>
 <body>
     <div id="app">
-        <!-- När text ändras ifrån JS så kommer även det som visas för
-            slutanvändaren ändras -->
-        <h1>{{text}}</h1>
+        <!-- Det som står i template kommer sättas in här. -->
     </div>
 </body>
 <script>
@@ -22,6 +20,9 @@
             text: "Hello, World!",
          };
       },
+      // När text ändras i data så kommer även det som visas för
+      // slutanvändaren ändras.
+      template: "<h1>{{text}}</h1>"
    };
 
     createApp(App).mount("#app");
